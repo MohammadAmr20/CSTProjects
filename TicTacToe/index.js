@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // )
     let x_score =0 ;
     let o_score = 0;
+    let isSoundPlayed = false ;
     const divBoard = document.getElementsByClassName('tile');
     const currentPlayerText = document.querySelector('.wrapper .current-player-text');
     const announcerText = document.querySelector('div.announcer-text');
@@ -12,6 +13,23 @@ window.addEventListener('DOMContentLoaded', () => {
     const displayDiv = document.getElementsByClassName('announcer-text');
     const scoreX = document.querySelector('.x .score');
     const scoreO = document.querySelector('.o .score');
+    const play_btn = document.getElementById('play');
+    const sound = new Audio("m.mp3");
+
+    play_btn.addEventListener('click',()=>{
+            if(!isSoundPlayed){
+                sound.play();
+                sound.autoplay = true;
+                sound.loop = true ;
+                isSoundPlayed = true;
+                play_btn.innerHTML = '<span class="material-symbols-outlined">pause</span>';
+            }
+            else{
+                sound.pause();
+                isSoundPlayed = false ;
+                play_btn.innerHTML = '<span class="material-symbols-outlined">play_arrow</span>';
+            }
+    });
     let board = ['', '', '', '', '', '', '', '', '']; 
     // This is the board representation, you will need to update this board whenever the user makes a move (just for 
     // illustration purposes)

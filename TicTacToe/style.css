@@ -135,6 +135,17 @@ body {
     right: 0;
 }
 
+#play{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 @keyframes animation1 {
     to{
         transform: translate(calc(50vw - 50%),calc(50vh - 50%)) rotate(720deg);
